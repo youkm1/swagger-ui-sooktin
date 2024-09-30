@@ -43,6 +43,7 @@ paths:
       description: 회원 가입에 성공하면 이메일 인증(2fa)을 거칩니다.
       operationId: registerUser
       requestBody:
+        description: 사용자 회원 정보
         content:
           application/json:
             schema:
@@ -52,9 +53,17 @@ paths:
         "200":
           description: 2fa로 넘어갑니다. 추후 201 코드로 바뀔듯요
           content:
-            '*/*':
+            application/json:
               schema:
-                type: object
+                type: string
+              example: 회원가입에 성공하셨습니다. 이메일 인증을 위하여 이메일함을 확인해주세요.
+        "400":
+          description: 잘못된 요청.
+          content:
+            application/json:
+              schema:
+                type: string
+              example: 이미 존재하는 이메일입니다.
   /auth/logout:
     post:
       tags:
@@ -63,6 +72,7 @@ paths:
       description: 이미 로그아웃되었으므로 아무것도 반환하지 않습니다.
       operationId: logout
       requestBody:
+        description: 사용자 로그아웃 정보
         content:
           application/json:
             schema:
@@ -83,18 +93,26 @@ paths:
       description: 2차인증이 필요하다면 2차인증 수속을 다시 밟고 이미 되었다면 JWT 토큰을 반환합니다.
       operationId: login
       requestBody:
+        description: 사용자 로그인 정보
         content:
           application/json:
             schema:
               $ref: "#/components/schemas/User"
         required: true
       responses:
+        "500":
+          description: 서버 내 오류
+          content:
+            applicatoin/json:
+              example: 다시 접속해주세요.
         "200":
-          description: OK
+          description: 로그인 성공 또는 2FA 필요
           content:
             '*/*':
               schema:
-                type: object
+                oneOf:
+                - $ref: "#/components/schemas/TwofaRequiredResponse"
+                - $ref: "#/components/schemas/AuthResponse"
   /auth/check-email:
     post:
       tags:
@@ -115,12 +133,14 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/EmailCheckResponse"
+              example: '이메일이 확인되었습니다. 비밀번호를 입력해주세요. '
         "404":
           description: 이메일 없음 ㅠㅠ
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/EmailCheckResponse"
+              example: 이메일이 존재하지 않아 회원가입으로 이동합니다.
   /usernote/{id}:
     get:
       tags:
@@ -198,6 +218,35 @@ paths:
                 type: string
 components:
   schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        email:
+          type: string
+          description: email
+          example: foo@sookmyung.ac.kr
+        is2fa:
+          type: boolean
+          description: Is_2fa
+          example: true
+        nickname:
+          type: string
+        password:
+          type: string
+          description: password
+          example: jamone122@3
+        roles:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+            enum:
+            - USER
+            - ADMIN
+      description: 회원
     Usernote:
       type: object
       properties:
@@ -217,28 +266,8 @@ components:
         modified_at:
           type: string
           format: date-time
-    User:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-        email:
-          type: string
-        is2fa:
-          type: boolean
-        nickname:
-          type: string
-        password:
-          type: string
-        roles:
-          uniqueItems: true
-          type: array
-          items:
-            type: string
-            enum:
-            - USER
-            - ADMIN
+        user:
+          $ref: "#/components/schemas/User"
     LogoutRequestDto:
       required:
       - email
@@ -246,23 +275,37 @@ components:
       properties:
         email:
           type: string
+          description: email
+          example: foo@sookmyung.ac.kr
+      description: 로그아웃 요청 DTO
+    TwofaRequiredResponse:
+      type: object
+      properties:
+        msg:
+          type: string
+      description: 2FA 필요 응답
+    AuthResponse:
+      type: object
+      properties:
+        token:
+          type: string
+          description: JWT 토큰
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+      description: 인증 응답
     EmailCheckRequest:
       type: object
       properties:
         email:
           type: string
-          description: 확인할 이메일 주소
-          example: user@sookmyung.com
-      description: 이메일 확인 여요청
+          description: email
+      description: 이메일 확인 요
     EmailCheckResponse:
       type: object
       properties:
         exists:
           type: boolean
           description: 이메일 존재 여부
-          example: true
         message:
           type: string
           description: 응답 메시지
-          example: 이메일이 확인되었습니다. 비밀번호를 입력해주세요.
       description: 이메일 확인 응답
