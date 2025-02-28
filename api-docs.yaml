@@ -1,4 +1,3 @@
----
 openapi: 3.0.1
 info:
   title: Sooktin Swagger
@@ -8,20 +7,20 @@ servers:
   - url: http://localhost:8080
     description: Generated server url
 security:
-  - 'bearer ': []
+  - "bearer ": []
 paths:
-  "/usernotes":
+  /usernotes:
     get:
       tags:
         - usernote-controller
       operationId: getAllUsernotes
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoListCreateUsernoteResponse"
+                $ref: "#/components/schemas/ResponseDtoListCreateUsernoteResponse"
     post:
       tags:
         - usernote-controller
@@ -30,15 +29,15 @@ paths:
         content:
           application/json;charset=UTF-8:
             schema:
-              "$ref": "#/components/schemas/CreateUsernoteRequest"
+              $ref: "#/components/schemas/CreateUsernoteRequest"
         required: true
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoCreateUsernoteResponse"
+                $ref: "#/components/schemas/ResponseDtoCreateUsernoteResponse"
   "/usernotes/{noteId}/likes":
     post:
       tags:
@@ -52,12 +51,12 @@ paths:
             type: integer
             format: int64
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/LikedResponse"
+                $ref: "#/components/schemas/LikedResponse"
   "/usernote/{noteId}/comments":
     get:
       tags:
@@ -71,12 +70,12 @@ paths:
             type: integer
             format: int64
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoListCreateCommentResponse"
+                $ref: "#/components/schemas/ResponseDtoListCreateCommentResponse"
     post:
       tags:
         - comment-controller
@@ -92,15 +91,15 @@ paths:
         content:
           application/json;charset=UTF-8:
             schema:
-              "$ref": "#/components/schemas/CreateCommentRequest"
+              $ref: "#/components/schemas/CreateCommentRequest"
         required: true
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoCreateCommentResponse"
+                $ref: "#/components/schemas/ResponseDtoCreateCommentResponse"
   "/usernote/{noteId}/comments/{parentId}/replies":
     get:
       tags:
@@ -120,12 +119,12 @@ paths:
             type: integer
             format: int64
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoListCreateCommentResponse"
+                $ref: "#/components/schemas/ResponseDtoListCreateCommentResponse"
     post:
       tags:
         - comment-controller
@@ -147,16 +146,16 @@ paths:
         content:
           application/json;charset=UTF-8:
             schema:
-              "$ref": "#/components/schemas/CreateCommentRequest"
+              $ref: "#/components/schemas/CreateCommentRequest"
         required: true
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoCreateCommentResponse"
-  "/s3/upload":
+                $ref: "#/components/schemas/ResponseDtoCreateCommentResponse"
+  /s3/upload:
     post:
       tags:
         - s-3-controller
@@ -173,12 +172,12 @@ paths:
                   type: string
                   format: binary
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoString"
+                $ref: "#/components/schemas/ResponseDtoString"
   "/comments/{commentId}/likes":
     post:
       tags:
@@ -192,24 +191,24 @@ paths:
             type: integer
             format: int64
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/LikedResponse"
-  "/career-cards":
+                $ref: "#/components/schemas/LikedResponse"
+  /career-cards:
     get:
       tags:
         - career-card-controller
       operationId: getCareerCardByUser
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoCreateCareerCardResponse"
+                $ref: "#/components/schemas/ResponseDtoCreateCareerCardResponse"
     post:
       tags:
         - career-card-controller
@@ -228,25 +227,25 @@ paths:
                     type: string
                     format: binary
                 request:
-                  "$ref": "#/components/schemas/CreateCareerCardRequest"
+                  $ref: "#/components/schemas/CreateCareerCardRequest"
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoCreateCareerCardResponse"
+                $ref: "#/components/schemas/ResponseDtoCreateCareerCardResponse"
     delete:
       tags:
         - career-card-controller
       operationId: deleteCareerCard
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoVoid"
+                $ref: "#/components/schemas/ResponseDtoVoid"
     patch:
       tags:
         - career-card-controller
@@ -265,15 +264,15 @@ paths:
                     type: string
                     format: binary
                 request:
-                  "$ref": "#/components/schemas/CreateCareerCardRequest"
+                  $ref: "#/components/schemas/CreateCareerCardRequest"
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoCreateCareerCardResponse"
-  "/auth/verify":
+                $ref: "#/components/schemas/ResponseDtoCreateCareerCardResponse"
+  /auth/verify:
     post:
       tags:
         - auth-controller
@@ -282,16 +281,16 @@ paths:
         content:
           application/json;charset=UTF-8:
             schema:
-              "$ref": "#/components/schemas/VerificationRequest"
+              $ref: "#/components/schemas/VerificationRequest"
         required: true
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/VerficationResponse"
-  "/auth/send-verification":
+                $ref: "#/components/schemas/VerficationResponse"
+  /auth/send-verification:
     post:
       tags:
         - auth-controller
@@ -300,16 +299,16 @@ paths:
         content:
           application/json;charset=UTF-8:
             schema:
-              "$ref": "#/components/schemas/SendVerificationRequest"
+              $ref: "#/components/schemas/SendVerificationRequest"
         required: true
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
                 type: object
-  "/auth/register":
+  /auth/register:
     post:
       tags:
         - auth-controller
@@ -318,16 +317,16 @@ paths:
         content:
           application/json;charset=UTF-8:
             schema:
-              "$ref": "#/components/schemas/RegisterRequest"
+              $ref: "#/components/schemas/RegisterRequest"
         required: true
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/RegisterResponse"
-  "/auth/refresh-token":
+                $ref: "#/components/schemas/RegisterResponse"
+  /auth/refresh-token:
     post:
       tags:
         - auth-controller
@@ -339,13 +338,13 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/RefreshTokenResponse"
-  "/auth/logout":
+                $ref: "#/components/schemas/RefreshTokenResponse"
+  /auth/logout:
     post:
       tags:
         - auth-controller
@@ -354,16 +353,16 @@ paths:
         content:
           application/json;charset=UTF-8:
             schema:
-              "$ref": "#/components/schemas/LogoutRequest"
+              $ref: "#/components/schemas/LogoutRequest"
         required: true
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
                 type: object
-  "/auth/login":
+  /auth/login:
     post:
       tags:
         - auth-controller
@@ -372,16 +371,16 @@ paths:
         content:
           application/json;charset=UTF-8:
             schema:
-              "$ref": "#/components/schemas/LoginRequest"
+              $ref: "#/components/schemas/LoginRequest"
         required: true
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/LoginResponse"
-  "/auth/check-email":
+                $ref: "#/components/schemas/LoginResponse"
+  /auth/check-email:
     post:
       tags:
         - auth-controller
@@ -390,27 +389,27 @@ paths:
         content:
           application/json;charset=UTF-8:
             schema:
-              "$ref": "#/components/schemas/EmailCheckRequest"
+              $ref: "#/components/schemas/EmailCheckRequest"
         required: true
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/EmailCheckResponse"
-  "/users/nickname":
+                $ref: "#/components/schemas/EmailCheckResponse"
+  /users/nickname:
     get:
       tags:
         - user-controller
       operationId: getNickname
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoString"
+                $ref: "#/components/schemas/ResponseDtoString"
     patch:
       tags:
         - user-controller
@@ -419,15 +418,15 @@ paths:
         content:
           application/json;charset=UTF-8:
             schema:
-              "$ref": "#/components/schemas/NicknameRequest"
+              $ref: "#/components/schemas/NicknameRequest"
         required: true
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/NicknameResponse"
+                $ref: "#/components/schemas/NicknameResponse"
   "/usernote/{noteId}/comments/{commentId}":
     get:
       tags:
@@ -447,12 +446,12 @@ paths:
             type: integer
             format: int64
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoCreateCommentResponse"
+                $ref: "#/components/schemas/ResponseDtoCreateCommentResponse"
     delete:
       tags:
         - comment-controller
@@ -471,12 +470,12 @@ paths:
             type: integer
             format: int64
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoVoid"
+                $ref: "#/components/schemas/ResponseDtoVoid"
     patch:
       tags:
         - comment-controller
@@ -498,15 +497,15 @@ paths:
         content:
           application/json;charset=UTF-8:
             schema:
-              "$ref": "#/components/schemas/CreateCommentRequest"
+              $ref: "#/components/schemas/CreateCommentRequest"
         required: true
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoCreateCommentResponse"
+                $ref: "#/components/schemas/ResponseDtoCreateCommentResponse"
   "/usernote/{id}":
     get:
       tags:
@@ -520,12 +519,12 @@ paths:
             type: integer
             format: int64
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoCreateUsernoteResponse"
+                $ref: "#/components/schemas/ResponseDtoCreateUsernoteResponse"
     delete:
       tags:
         - usernote-controller
@@ -538,12 +537,12 @@ paths:
             type: integer
             format: int64
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoVoid"
+                $ref: "#/components/schemas/ResponseDtoVoid"
     patch:
       tags:
         - usernote-controller
@@ -559,16 +558,16 @@ paths:
         content:
           application/json;charset=UTF-8:
             schema:
-              "$ref": "#/components/schemas/CreateUsernoteRequest"
+              $ref: "#/components/schemas/CreateUsernoteRequest"
         required: true
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoCreateUsernoteResponse"
-  "/auth/password":
+                $ref: "#/components/schemas/ResponseDtoCreateUsernoteResponse"
+  /auth/password:
     patch:
       tags:
         - auth-controller
@@ -577,22 +576,22 @@ paths:
         content:
           application/json;charset=UTF-8:
             schema:
-              "$ref": "#/components/schemas/PasswordChangeRequest"
+              $ref: "#/components/schemas/PasswordChangeRequest"
         required: true
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/PasswordChangeResponse"
-  "/users":
+                $ref: "#/components/schemas/PasswordChangeResponse"
+  /users:
     get:
       tags:
         - user-controller
       operationId: getUser
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
@@ -603,7 +602,7 @@ paths:
         - user-controller
       operationId: deleteUser
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
@@ -622,27 +621,27 @@ paths:
             type: integer
             format: int64
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoString"
-  "/users/usernotes":
+                $ref: "#/components/schemas/ResponseDtoString"
+  /users/usernotes:
     get:
       tags:
         - user-controller
       operationId: getUserNotes
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
                 type: array
                 items:
-                  "$ref": "#/components/schemas/FindMyUsernoteWithJWTResponse"
-  "/users/search":
+                  $ref: "#/components/schemas/FindMyUsernoteWithJWTResponse"
+  /users/search:
     get:
       tags:
         - user-controller
@@ -654,36 +653,36 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/User"
-  "/users/main-image":
+                $ref: "#/components/schemas/User"
+  /users/main-image:
     get:
       tags:
         - user-controller
       operationId: getMyMainImage
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoString"
-  "/users/card-storage":
+                $ref: "#/components/schemas/ResponseDtoString"
+  /users/card-storage:
     get:
       tags:
         - user-controller
       operationId: getUserCardStorage
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/GetStorageResponse"
+                $ref: "#/components/schemas/GetStorageResponse"
   "/usernotes/{noteId}/likes/status":
     get:
       tags:
@@ -697,7 +696,7 @@ paths:
             type: integer
             format: int64
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
@@ -716,7 +715,7 @@ paths:
             type: integer
             format: int64
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
@@ -729,13 +728,13 @@ paths:
         - comment-controller
       operationId: getCommentsByUser
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoListCreateCommentResponse"
-  "/s3/images":
+                $ref: "#/components/schemas/ResponseDtoListCreateCommentResponse"
+  /s3/images:
     get:
       tags:
         - s-3-controller
@@ -749,13 +748,13 @@ paths:
             items:
               type: string
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoListString"
-  "/s3/image":
+                $ref: "#/components/schemas/ResponseDtoListString"
+  /s3/image:
     get:
       tags:
         - s-3-controller
@@ -767,12 +766,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoString"
+                $ref: "#/components/schemas/ResponseDtoString"
   "/comments/{commentId}/likes/status":
     get:
       tags:
@@ -786,7 +785,7 @@ paths:
             type: integer
             format: int64
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
@@ -805,7 +804,7 @@ paths:
             type: integer
             format: int64
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
@@ -825,12 +824,12 @@ paths:
             type: integer
             format: int64
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoListString"
+                $ref: "#/components/schemas/ResponseDtoListString"
   "/career-cards/{cardId}":
     get:
       tags:
@@ -844,49 +843,81 @@ paths:
             type: integer
             format: int64
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoCreateCareerCardResponse"
-  "/career-cards/images":
+                $ref: "#/components/schemas/ResponseDtoCreateCareerCardResponse"
+  /career-cards/search:
+    get:
+      tags:
+        - career-card-controller
+      operationId: searchCareerCards
+      parameters:
+        - name: keyword
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: size
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 10
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: "#/components/schemas/ResponseDtoSearchCareerCardResponse"
+  /career-cards/images:
     get:
       tags:
         - career-card-controller
       operationId: getMyCareerCardImages
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoListString"
-  "/career-cards/all":
+                $ref: "#/components/schemas/ResponseDtoListString"
+  /career-cards/all:
     get:
       tags:
         - career-card-controller
       operationId: getAllCareerCards
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoListCreateCareerCardResponse"
-  "/auth/id":
+                $ref: "#/components/schemas/ResponseDtoListCreateCareerCardResponse"
+  /auth/id:
     get:
       tags:
         - auth-controller
       operationId: id
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
                 type: string
-  "/s3/delete":
+  /s3/delete:
     delete:
       tags:
         - s-3-controller
@@ -898,13 +929,13 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoVoid"
-  "/s3/delete-all":
+                $ref: "#/components/schemas/ResponseDtoVoid"
+  /s3/delete-all:
     delete:
       tags:
         - s-3-controller
@@ -918,12 +949,12 @@ paths:
                 type: string
         required: true
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json;charset=UTF-8:
               schema:
-                "$ref": "#/components/schemas/ResponseDtoVoid"
+                $ref: "#/components/schemas/ResponseDtoVoid"
 components:
   schemas:
     CreateUsernoteRequest:
@@ -954,7 +985,7 @@ components:
         message:
           type: string
         data:
-          "$ref": "#/components/schemas/CreateUsernoteResponse"
+          $ref: "#/components/schemas/CreateUsernoteResponse"
     LikedDto:
       type: object
       properties:
@@ -972,7 +1003,7 @@ components:
         message:
           type: string
         data:
-          "$ref": "#/components/schemas/LikedDto"
+          $ref: "#/components/schemas/LikedDto"
     CreateCommentRequest:
       type: object
       properties:
@@ -1011,7 +1042,7 @@ components:
         message:
           type: string
         data:
-          "$ref": "#/components/schemas/CreateCommentResponse"
+          $ref: "#/components/schemas/CreateCommentResponse"
     ResponseDtoString:
       type: object
       properties:
@@ -1047,7 +1078,7 @@ components:
         experiences:
           type: array
           items:
-            "$ref": "#/components/schemas/ExperienceRequest"
+            $ref: "#/components/schemas/ExperienceRequest"
         skills:
           type: array
           items:
@@ -1098,7 +1129,7 @@ components:
         experiences:
           type: array
           items:
-            "$ref": "#/components/schemas/Experience"
+            $ref: "#/components/schemas/Experience"
         skills:
           type: array
           items:
@@ -1127,7 +1158,7 @@ components:
         message:
           type: string
         data:
-          "$ref": "#/components/schemas/CreateCareerCardResponse"
+          $ref: "#/components/schemas/CreateCareerCardResponse"
     VerificationRequest:
       type: object
       properties:
@@ -1161,7 +1192,7 @@ components:
         email:
           type: string
         password:
-          pattern: "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,20}$"
+          pattern: ^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,20}$
           type: string
         confirmPassword:
           type: string
@@ -1186,7 +1217,7 @@ components:
         message:
           type: string
         data:
-          "$ref": "#/components/schemas/TokenDto"
+          $ref: "#/components/schemas/TokenDto"
     TokenDto:
       type: object
       properties:
@@ -1228,7 +1259,7 @@ components:
         message:
           type: string
         data:
-          "$ref": "#/components/schemas/TokenDto"
+          $ref: "#/components/schemas/TokenDto"
     EmailCheckRequest:
       required:
         - email
@@ -1264,7 +1295,7 @@ components:
         message:
           type: string
         data:
-          "$ref": "#/components/schemas/UserDto"
+          $ref: "#/components/schemas/UserDto"
     UserDto:
       type: object
       properties:
@@ -1323,7 +1354,7 @@ components:
         message:
           type: string
         data:
-          "$ref": "#/components/schemas/FindMyUsernoteDto"
+          $ref: "#/components/schemas/FindMyUsernoteDto"
     CareerCard:
       type: object
       properties:
@@ -1331,7 +1362,7 @@ components:
           type: integer
           format: int64
         user:
-          "$ref": "#/components/schemas/User"
+          $ref: "#/components/schemas/User"
         major:
           type: string
         created_at:
@@ -1358,13 +1389,15 @@ components:
         experiences:
           type: array
           items:
-            "$ref": "#/components/schemas/Experience"
+            $ref: "#/components/schemas/Experience"
         skills:
           type: array
           items:
             type: string
-        careerCardStorage:
-          "$ref": "#/components/schemas/CareerCardStorage"
+        storageMappings:
+          type: array
+          items:
+            $ref: "#/components/schemas/StorageCardMapping"
     CareerCardStorage:
       type: object
       properties:
@@ -1372,11 +1405,21 @@ components:
           type: integer
           format: int64
         user:
-          "$ref": "#/components/schemas/User"
-        careerCards:
+          $ref: "#/components/schemas/User"
+        cardMappings:
           type: array
           items:
-            "$ref": "#/components/schemas/CareerCard"
+            $ref: "#/components/schemas/StorageCardMapping"
+    StorageCardMapping:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        careerCard:
+          $ref: "#/components/schemas/CareerCard"
+        careerCardStorage:
+          $ref: "#/components/schemas/CareerCardStorage"
     User:
       type: object
       properties:
@@ -1404,9 +1447,9 @@ components:
               - USER
               - ADMIN
         careerCard:
-          "$ref": "#/components/schemas/CareerCard"
+          $ref: "#/components/schemas/CareerCard"
         careerCardStorage:
-          "$ref": "#/components/schemas/CareerCardStorage"
+          $ref: "#/components/schemas/CareerCardStorage"
       description: 회원
     GetStorageResponse:
       type: object
@@ -1417,7 +1460,7 @@ components:
         message:
           type: string
         data:
-          "$ref": "#/components/schemas/CareerCardStorage"
+          $ref: "#/components/schemas/CareerCardStorage"
     ResponseDtoListCreateUsernoteResponse:
       type: object
       properties:
@@ -1429,7 +1472,7 @@ components:
         data:
           type: array
           items:
-            "$ref": "#/components/schemas/CreateUsernoteResponse"
+            $ref: "#/components/schemas/CreateUsernoteResponse"
     ResponseDtoListCreateCommentResponse:
       type: object
       properties:
@@ -1441,7 +1484,7 @@ components:
         data:
           type: array
           items:
-            "$ref": "#/components/schemas/CreateCommentResponse"
+            $ref: "#/components/schemas/CreateCommentResponse"
     ResponseDtoListString:
       type: object
       properties:
@@ -1454,6 +1497,59 @@ components:
           type: array
           items:
             type: string
+    CareerCardDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        major:
+          type: string
+        job:
+          type: string
+        userId:
+          type: integer
+          format: int64
+        department:
+          type: string
+        student_num:
+          type: string
+        skills:
+          type: array
+          items:
+            type: string
+        companiesInExperience:
+          type: array
+          items:
+            type: string
+        imageUrl:
+          type: string
+    ResponseDtoSearchCareerCardResponse:
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int32
+        message:
+          type: string
+        data:
+          $ref: "#/components/schemas/SearchCareerCardResponse"
+    SearchCareerCardResponse:
+      type: object
+      properties:
+        careerCards:
+          type: array
+          items:
+            $ref: "#/components/schemas/CareerCardDTO"
+        totalCount:
+          type: integer
+          format: int32
+        page:
+          type: integer
+          format: int32
+        size:
+          type: integer
+          format: int32
     ResponseDtoListCreateCareerCardResponse:
       type: object
       properties:
@@ -1465,7 +1561,7 @@ components:
         data:
           type: array
           items:
-            "$ref": "#/components/schemas/CreateCareerCardResponse"
+            $ref: "#/components/schemas/CreateCareerCardResponse"
     ResponseDtoVoid:
       type: object
       properties:
@@ -1477,8 +1573,8 @@ components:
         data:
           type: object
   securitySchemes:
-    'bearer ':
+    "bearer ":
       type: http
-      name: 'bearer '
+      name: "bearer "
       scheme: bearer
       bearerFormat: JWT
