@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:8080",
+      "url": "http://sooktin.duckdns.org",
       "description": "Generated server url"
     }
   ],
@@ -38,7 +38,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoLong"
                 }
@@ -67,7 +67,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoLong"
                 }
@@ -87,7 +87,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoListCreateUsernoteResponse"
                 }
@@ -103,7 +103,7 @@
         "operationId": "createPost",
         "requestBody": {
           "content": {
-            "application/json;charset=UTF-8": {
+            "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CreateUsernoteRequest"
               }
@@ -115,7 +115,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoCreateUsernoteResponse"
                 }
@@ -146,7 +146,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoListCreateCommentResponse"
                 }
@@ -173,7 +173,7 @@
         ],
         "requestBody": {
           "content": {
-            "application/json;charset=UTF-8": {
+            "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CreateCommentRequest"
               }
@@ -185,7 +185,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoCreateCommentResponse"
                 }
@@ -225,7 +225,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoListCreateCommentResponse"
                 }
@@ -261,7 +261,7 @@
         ],
         "requestBody": {
           "content": {
-            "application/json;charset=UTF-8": {
+            "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CreateCommentRequest"
               }
@@ -273,7 +273,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoCreateCommentResponse"
                 }
@@ -291,7 +291,7 @@
         "operationId": "uploadImage",
         "requestBody": {
           "content": {
-            "application/json;charset=UTF-8": {
+            "application/json": {
               "schema": {
                 "required": [
                   "file"
@@ -311,7 +311,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoString"
                 }
@@ -342,7 +342,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/LikedResponse"
                 }
@@ -373,7 +373,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/LikedResponse"
                 }
@@ -393,7 +393,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoListChatRoomSummaryDTO"
                 }
@@ -422,7 +422,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoChatRoom"
                 }
@@ -453,7 +453,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoMapStringObject"
                 }
@@ -473,7 +473,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoCareerCardDTO"
                 }
@@ -489,7 +489,7 @@
         "operationId": "createCareerCard",
         "requestBody": {
           "content": {
-            "application/json;charset=UTF-8": {
+            "application/json": {
               "schema": {
                 "required": [
                   "request"
@@ -515,7 +515,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoCareerCardDTO"
                 }
@@ -533,7 +533,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoVoid"
                 }
@@ -549,7 +549,7 @@
         "operationId": "updateCareerCard",
         "requestBody": {
           "content": {
-            "application/json;charset=UTF-8": {
+            "application/json": {
               "schema": {
                 "required": [
                   "request"
@@ -575,7 +575,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoCareerCardDTO"
                 }
@@ -593,7 +593,7 @@
         "operationId": "verifyEmail",
         "requestBody": {
           "content": {
-            "application/json;charset=UTF-8": {
+            "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/VerificationRequest"
               }
@@ -605,7 +605,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/VerficationResponse"
                 }
@@ -623,7 +623,7 @@
         "operationId": "sendVerificationCode",
         "requestBody": {
           "content": {
-            "application/json;charset=UTF-8": {
+            "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/SendVerificationRequest"
               }
@@ -635,7 +635,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoObject"
                 }
@@ -653,7 +653,7 @@
         "operationId": "registerUser",
         "requestBody": {
           "content": {
-            "application/json;charset=UTF-8": {
+            "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/RegisterRequest"
               }
@@ -665,7 +665,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/RegisterResponse"
                 }
@@ -685,7 +685,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "type": "object"
                 }
@@ -703,7 +703,7 @@
         "operationId": "login",
         "requestBody": {
           "content": {
-            "application/json;charset=UTF-8": {
+            "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/LoginRequest"
               }
@@ -715,7 +715,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/LoginResponse"
                 }
@@ -733,7 +733,7 @@
         "operationId": "checkEmail",
         "requestBody": {
           "content": {
-            "application/json;charset=UTF-8": {
+            "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/EmailCheckRequest"
               }
@@ -745,7 +745,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/EmailCheckResponse"
                 }
@@ -765,7 +765,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoString"
                 }
@@ -781,7 +781,7 @@
         "operationId": "chacngeNickname",
         "requestBody": {
           "content": {
-            "application/json;charset=UTF-8": {
+            "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/NicknameRequest"
               }
@@ -793,7 +793,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/NicknameResponse"
                 }
@@ -833,7 +833,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoCreateCommentResponse"
                 }
@@ -871,7 +871,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoVoid"
                 }
@@ -907,7 +907,7 @@
         ],
         "requestBody": {
           "content": {
-            "application/json;charset=UTF-8": {
+            "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CreateCommentRequest"
               }
@@ -919,7 +919,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoCreateCommentResponse"
                 }
@@ -950,7 +950,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoCreateUsernoteResponse"
                 }
@@ -979,7 +979,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoVoid"
                 }
@@ -1006,7 +1006,7 @@
         ],
         "requestBody": {
           "content": {
-            "application/json;charset=UTF-8": {
+            "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CreateUsernoteRequest"
               }
@@ -1018,7 +1018,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoCreateUsernoteResponse"
                 }
@@ -1048,7 +1048,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoObject"
                 }
@@ -1077,7 +1077,7 @@
         ],
         "requestBody": {
           "content": {
-            "application/json;charset=UTF-8": {
+            "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ChatRoomStatusUpdateRequest"
               }
@@ -1089,7 +1089,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoVoid"
                 }
@@ -1107,7 +1107,7 @@
         "operationId": "changePassword",
         "requestBody": {
           "content": {
-            "application/json;charset=UTF-8": {
+            "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/PasswordChangeRequest"
               }
@@ -1119,7 +1119,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/PasswordChangeResponse"
                 }
@@ -1150,7 +1150,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoObject"
                 }
@@ -1170,7 +1170,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "type": "object"
                 }
@@ -1188,7 +1188,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "type": "object"
                 }
@@ -1219,7 +1219,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoString"
                 }
@@ -1239,7 +1239,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "type": "array",
                   "items": {
@@ -1272,7 +1272,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/User"
                 }
@@ -1292,7 +1292,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoString"
                 }
@@ -1312,7 +1312,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoStorageResponse"
                 }
@@ -1332,7 +1332,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoListCreateCommentResponse"
                 }
@@ -1370,7 +1370,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoSearchUsernoteResponse"
                 }
@@ -1410,7 +1410,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoListMapStringObject"
                 }
@@ -1430,7 +1430,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoListString"
                 }
@@ -1450,7 +1450,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoListString"
                 }
@@ -1470,7 +1470,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoMapStringDouble"
                 }
@@ -1512,7 +1512,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoListMapStringObject"
                 }
@@ -1545,7 +1545,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoListString"
                 }
@@ -1575,7 +1575,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoString"
                 }
@@ -1606,7 +1606,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "type": "boolean"
                 }
@@ -1637,7 +1637,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "type": "integer",
                   "format": "int64"
@@ -1669,7 +1669,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "type": "boolean"
                 }
@@ -1700,7 +1700,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "type": "integer",
                   "format": "int64"
@@ -1732,7 +1732,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoListUserChatRoomDTO"
                 }
@@ -1763,7 +1763,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoListString"
                 }
@@ -1794,7 +1794,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoCareerCardDTO"
                 }
@@ -1844,7 +1844,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoSearchCareerCardResponse"
                 }
@@ -1864,7 +1864,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoListString"
                 }
@@ -1884,7 +1884,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoListCareerCardDTO"
                 }
@@ -1904,7 +1904,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "type": "string"
                 }
@@ -1934,7 +1934,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoPagedResponseAlarmResponse"
                 }
@@ -1984,7 +1984,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoVoid"
                 }
@@ -2002,7 +2002,7 @@
         "operationId": "deleteAllImages",
         "requestBody": {
           "content": {
-            "application/json;charset=UTF-8": {
+            "application/json": {
               "schema": {
                 "type": "array",
                 "items": {
@@ -2017,7 +2017,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoVoid"
                 }
@@ -2048,7 +2048,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoVoid"
                 }
@@ -2078,7 +2078,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoObject"
                 }
@@ -2109,7 +2109,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json;charset=UTF-8": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseDtoObject"
                 }
