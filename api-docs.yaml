@@ -7,8 +7,12 @@
   },
   "servers": [
     {
-      "url": "http://sooktin.duckdns.org",
-      "description": "Generated server url"
+      "url": "https://sooktin.duckdns.org",
+      "description": "Production server"
+    },
+    {
+      "url": "http://localhost:8080",
+      "description": "Local development server"
     }
   ],
   "security": [
